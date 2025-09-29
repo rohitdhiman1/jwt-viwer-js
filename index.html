@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JWT Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>JWT Viewer</h1>
+    <div class="container">
+        <div class="panel">
+            <label for="jwtToken">Paste JWT Token:</label><br>
+            <textarea id="jwtToken" name="jwtToken"></textarea>
+            <div style="margin-top:10px;">
+                <label><input type="radio" name="jwtType" value="signed" checked> Signed</label>
+                <label><input type="radio" name="jwtType" value="unsigned"> Unsigned</label>
+            </div>
+            <button id="decode-btn">Decode</button>
+        </div>
+        <div class="panel">
+            <label>Decoded Header:</label>
+            <pre class="result json-view" id="headerJson"></pre>
+            <label style="margin-top:10px;">Decoded Payload:</label>
+            <pre class="result json-view" id="payloadJson"></pre>
+            <div id="error" style="color:red; margin-top:10px;"></div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
