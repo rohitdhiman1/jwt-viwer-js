@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>JWT Viewer</h1>
+    <div class="header-container">
+        <h1>JWT Viewer</h1>
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="theme-toggle">
+                <input type="checkbox" id="theme-toggle" />
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
     <div class="container">
         <div class="panel">
             <label for="jwtToken">Paste JWT Token:</label><br>
@@ -26,7 +34,7 @@
             <div id="error" style="color:red; margin-top:10px;"></div>
         </div>
     </div>
-    <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
