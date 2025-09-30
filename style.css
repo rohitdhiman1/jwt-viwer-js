@@ -138,6 +138,101 @@ button:hover {
 .json-view .boolean { color: var(--boolean-color); }
 .json-view .null { color: var(--null-color); }
 
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.tab-link {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+    opacity: 0.6;
+    transition: opacity 0.3s, border-bottom 0.3s;
+    border-bottom: 3px solid transparent;
+    position: relative;
+}
+
+.tab-link:hover {
+    opacity: 1;
+}
+
+.tab-link.active {
+    opacity: 1;
+    border-bottom: 3px solid var(--button-bg-color);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+#payload-kv-pairs .kv-pair {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#payload-kv-pairs .kv-pair input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--textarea-border-color);
+    border-radius: 6px;
+    background: var(--textarea-bg-color);
+    color: var(--text-color);
+}
+
+.remove-pair-btn, #add-pair-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.remove-pair-btn {
+    background-color: #e53e3e;
+    color: white;
+}
+
+#add-pair-btn {
+    background-color: #38a169;
+    color: white;
+    margin-top: 10px;
+}
+
+#secret-key {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--textarea-border-color);
+    border-radius: 6px;
+    background: var(--textarea-bg-color);
+    color: var(--text-color);
+    box-sizing: border-box;
+}
+
+#generated-jwt {
+    width: 100%;
+    height: 180px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--textarea-border-color);
+    padding: 12px;
+    margin-bottom: 16px;
+    background: var(--textarea-bg-color);
+    color: var(--text-color);
+    resize: vertical;
+    box-sizing: border-box;
+}
+
 .theme-switch-wrapper {
     position: absolute;
     right: 20px;

@@ -16,25 +16,63 @@
             </label>
         </div>
     </div>
-    <div class="container">
-        <div class="panel">
-            <label for="jwtToken">Paste JWT Token:</label><br>
-            <textarea id="jwtToken" name="jwtToken"></textarea>
-            <div style="margin-top:10px;">
-                <label><input type="radio" name="jwtType" value="signed" checked> Signed</label>
-                <label><input type="radio" name="jwtType" value="unsigned"> Unsigned</label>
+    <div class="tabs">
+        <button class="tab-link active" data-tab="decode">Decode</button>
+        <button class="tab-link" data-tab="encode">Encode</button>
+    </div>
+    <div id="decode" class="tab-content active">
+        <div class="container">
+            <div class="panel">
+                <label for="jwtToken">Paste JWT Token:</label><br>
+                <textarea id="jwtToken" name="jwtToken"></textarea>
+                <div style="margin-top:10px;">
+                    <label><input type="radio" name="jwtType" value="signed" checked> Signed</label>
+                    <label><input type="radio" name="jwtType" value="unsigned"> Unsigned</label>
+                </div>
+                <button id="decode-btn">Decode</button>
             </div>
-            <button id="decode-btn">Decode</button>
+            <div class="panel">
+                <label>Decoded Header:</label>
+                <pre class="result json-view" id="headerJson"></pre>
+                <label style="margin-top:10px;">Decoded Payload:</label>
+                <pre class="result json-view" id="payloadJson"></pre>
+                <div id="error" style="color:red; margin-top:10px;"></div>
+            </div>
         </div>
-        <div class="panel">
-            <label>Decoded Header:</label>
-            <pre class="result json-view" id="headerJson"></pre>
-            <label style="margin-top:10px;">Decoded Payload:</label>
-            <pre class="result json-view" id="payloadJson"></pre>
-            <div id="error" style="color:red; margin-top:10px;"></div>
+    </div>
+    <div id="encode" class="tab-content">
+        <div class="container">
+            <div class="panel">
+                <label>Payload (Key-Value Pairs):</label>
+                <div id="payload-kv-pairs">
+                    <div class="kv-pair">
+                        <input type="text" class="key" placeholder="Key">
+                        <input type="text" class="value" placeholder="Value">
+                        <button class="remove-pair-btn">-</button>
+                    </div>
+                </div>
+                <button id="add-pair-btn">+</button>
+                
+                <div style="margin-top: 20px;">
+                    <label><input type="radio" name="encodeJwtType" value="signed" checked> Signed</label>
+                    <label><input type="radio" name="encodeJwtType" value="unsigned"> Unsigned</label>
+                </div>
+
+                <div id="secret-key-wrapper">
+                    <label for="secret-key" style="margin-top:10px;">Secret Key:</label>
+                    <input type="text" id="secret-key" placeholder="Your secret key">
+                </div>
+
+                <button id="encode-btn">Encode</button>
+            </div>
+            <div class="panel">
+                <label>Generated JWT:</label>
+                <textarea id="generated-jwt" readonly></textarea>
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsrsasign/lib/jsrsasign-all-min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
