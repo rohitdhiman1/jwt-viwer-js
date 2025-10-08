@@ -71,8 +71,17 @@
             </div>
         </div>
     </div>
+    <footer style="text-align:center; margin: 32px 0 16px 0; color: var(--text-color); font-size: 15px; opacity: 0.7;">
+        <span id="copyright"></span>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jsrsasign/lib/jsrsasign-all-min.js"></script>
     <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var year = new Date().getFullYear();
+        document.getElementById('copyright').textContent = `© ${year} Rohit Dhiman. All rights reserved.`;
+      });
+    </script>
 </body>
 </html>
