@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (savedTheme) {
         setDarkMode(savedTheme === 'dark');
     } else {
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        setDarkMode(prefersDark);
+        // Default to dark mode if no preference is set
+        setDarkMode(true);
     }
 
 
